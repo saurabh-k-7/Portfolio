@@ -1,10 +1,18 @@
 const projects = [
   {
-    title: "E-Commerce Platform",
-    description: "A modern e-commerce solution built with React and Node.js",
+    title: "Social Media App",
+    description: "Real-time social platform with modern features",
+    image:
+      "https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=800",
+    tags: ["React Native", "Firebase", "Redux"],
+  },
+  {
+    title: "BankHub",
+    description:
+      "Development and deployment of a modern banking system clone hosted on AWS-EC2 ",
     image:
       "https://images.unsplash.com/photo-1661956602116-aa6865609028?auto=format&fit=crop&q=80&w=800",
-    tags: ["React", "Node.js", "MongoDB"],
+    tags: ["Javascript", "SQL", "AWS-EC2", "Terraform"],
   },
   {
     title: "AI Dashboard",
@@ -12,13 +20,6 @@ const projects = [
     image:
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
     tags: ["TypeScript", "Python", "TensorFlow"],
-  },
-  {
-    title: "Social Media App",
-    description: "Real-time social platform with modern features",
-    image:
-      "https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=800",
-    tags: ["React Native", "Firebase", "Redux"],
   },
 ];
 
