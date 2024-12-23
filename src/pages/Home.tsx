@@ -73,7 +73,7 @@ export default function Home() {
     <div className="relative min-h-screen">
       {/* Add the Sketchfab iframe as a background */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="sketchfab-embed-wrapper w-500 h-full">
+        <div className="sketchfab-embed-wrapper w-full h-full">
           <iframe
             title="Room Isometric"
             frameBorder="0"

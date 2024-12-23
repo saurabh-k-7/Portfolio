@@ -1,10 +1,10 @@
 const projects = [
   {
-    title: "Social Media App",
-    description: "Real-time social platform with modern features",
+    title: "Imaginate",
+    description: "A Framework for Image Generation, Classification and Segmentation",
     image:
       "https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=800",
-    tags: ["React Native", "Firebase", "Redux"],
+    tags: ["Python", "Streamlit", "A"],
   },
   {
     title: "BankHub",
