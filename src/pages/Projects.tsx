@@ -1,25 +1,26 @@
 const projects = [
   {
-    title: "Imaginate",
-    description: "A Framework for Image Generation, Classification and Segmentation",
-    image:
-      "https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=800",
-    tags: ["Python", "Streamlit", "A"],
-  },
-  {
     title: "BankHub",
     description:
       "Development and deployment of a modern banking system clone hosted on AWS-EC2 ",
-    image:
-      "https://images.unsplash.com/photo-1661956602116-aa6865609028?auto=format&fit=crop&q=80&w=800",
+    image: "/publicBnakhubThumbnail.png",
     tags: ["Javascript", "SQL", "AWS-EC2", "Terraform"],
   },
   {
-    title: "AI Dashboard",
-    description: "Analytics dashboard with AI-powered insights",
+    title: "Imaginate",
+    description:
+      "A Framework for Image Generation, Classification and Segmentation",
+    image: "",
+    tags: ["Python", "Streamlit"],
+  },
+
+  {
+    title: "Sales Report DashBoard",
+    description:
+      "Created Amazing Dashboard using Power BI to visualize sales data.",
     image:
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
-    tags: ["TypeScript", "Python", "TensorFlow"],
+    tags: ["PowerBI"],
   },
 ];
 
