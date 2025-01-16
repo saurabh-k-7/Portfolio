@@ -1,9 +1,11 @@
+import image1 from "../public/BnakhubThumbnail.png";
+
 const projects = [
   {
     title: "BankHub",
     description:
       "Development and deployment of a modern banking system clone hosted on AWS-EC2 ",
-    image: "/publicBnakhubThumbnail.png",
+    image: image1,
     tags: ["Javascript", "SQL", "AWS-EC2", "Terraform"],
   },
   {
