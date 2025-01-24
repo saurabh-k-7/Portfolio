@@ -7,7 +7,7 @@ export default function Navbar() {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <div className="fixed bottom-8 left-1/2 -translate-x-1/2 bg-gray-900/80 backdrop-blur-lg px-6 py-4 rounded-2xl border border-gray-700/50 shadow-xl z-50">
+    <div className="fixed bottom-8 left-1/2 -translate-x-1/2 bg-gray-900/80 backdrop-blur-lg px-6 py-4 rounded-2xl border border-gray-400/50 shadow-xl z-50">
       <nav className="flex gap-8">
         {[
           { path: "/", icon: Home, label: "Home" },
@@ -19,8 +19,8 @@ export default function Navbar() {
             to={path}
             className={`flex flex-col items-center gap-1 transition-all duration-300 ${
               isActive(path)
-                ? "text-purple-400 scale-110"
-                : "text-gray-400 hover:text-purple-300"
+                ? "text-purple-400 scale-140"
+                : "text-gray-300 hover:text-purple-100"
             }`}
           >
             <Icon size={20} />

@@ -11,10 +11,10 @@ export default function Contact() {
             className="w-full h-full object-cover"
           />
         </div>
-        <h2 className="text-2xl font-bold text-purple-400 mb-2">
+        <h2 className="text-3xl font-bold text-purple-400 mb-2">
           Saurabh Kale
         </h2>
-        <p className="text-gray-100 mb-4">
+        <p className="text-1xl text-gray-100 mb-4">
           Full Stack Developer | UI/UX | Data Analyst
         </p>
         <p className="text-gray-400 mb-4"></p>

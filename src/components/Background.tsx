@@ -74,7 +74,7 @@ export default function Background() {
       </div>
 
       {/* Animation styles */}
-      <style jsx>{`
+      <style>{`
         .animate-bounce {
           animation: bounce 10s ease-in-out infinite;
         }
