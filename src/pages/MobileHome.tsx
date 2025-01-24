@@ -2,7 +2,7 @@ import React from "react";
 
 export default function MobileHome() {
   return (
-    <div className="relative min-h-screen flex flex-col items-center justify-center text-center text-white px-4">
+    <div className="relative min-h-screen flex flex-col items-center justify-center text-center text-white px-40">
       <div className="bg-violet/10 backdrop-blur-md p-6 rounded-lg">
         <h1 className="text-4xl font-bold mb-4 text-shadow">Saurabh Kale</h1>
         <p className="text-lg text-gray-200 mb-6 text-shadow">
