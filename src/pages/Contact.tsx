@@ -4,9 +4,9 @@ export default function Contact() {
   return (
     <div className="min-h-screen flex items-center justify-center px-4">
       <div className="relative max-w-md w-full bg-gray-800/50 rounded-xl p-8 border border-gray-700/50 backdrop-blur-sm flex flex-col items-center card">
-        <div className="relative w-36 h-36 rounded-full overflow-hidden mb-4">
+        <div className="relative w-56 h-56 rounded-full overflow-hidden mb-4">
           <img
-            src="/logo.svg"
+            src="./dp.jpg"
             alt="Profile"
             className="w-full h-full object-cover"
           />
@@ -23,7 +23,7 @@ export default function Contact() {
             href="https://www.linkedin.com/in/saurabh-kale-056b7a22a/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-400 hover:text-purple-400 transition-colors duration-300"
+            className="text-gray-400 hover:text-purple-400 transition-transform duration-300 transform hover:scale-150"
             aria-label="LinkedIn"
           >
             <Linkedin size={24} />
@@ -32,7 +32,7 @@ export default function Contact() {
             href="https://github.com/saurabh-k-7"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-400 hover:text-purple-400 transition-colors duration-300"
+            className="text-gray-400 hover:text-purple-400 transition-transform duration-300 transform hover:scale-150"
             aria-label="GitHub"
           >
             <Github size={24} />
@@ -41,7 +41,7 @@ export default function Contact() {
             href="mailto:saurabh2003kale@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-400 hover:text-purple-400 transition-colors duration-300"
+            className="text-gray-400 hover:text-purple-400 transition-transform duration-300 transform hover:scale-150"
             aria-label="Email"
           >
             <Mail size={24} />
@@ -50,7 +50,7 @@ export default function Contact() {
             href="https://www.instagram.com/saurabh.k.7?igsh=YXZjMXlidWoxanRq"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-400 hover:text-purple-400 transition-colors duration-300"
+            className="text-gray-400 hover:text-purple-400 transition-transform duration-300 transform hover:scale-150"
             aria-label="Instagram"
           >
             <Instagram size={24} />
@@ -61,7 +61,7 @@ export default function Contact() {
             href="https://drive.google.com/file/d/1TXZU5T1kiavBUlXPDNCOxnaauLIBH5FN/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors duration-300 text-center"
+            className="w-[150px] py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors duration-300 text-center"
           >
             <FileText size={20} className="inline-block mr-2" />
             Resume

@@ -19,14 +19,21 @@ export default function Background() {
     <FaAws className="icon" />,
     <FaDatabase className="icon" />,
     <FaNodeJs className="icon" />,
-    <FaReact className="icon" />,
-    <FaHtml5 className="icon" />,
-    <FaCss3Alt className="icon" />,
-    <FaJs className="icon" />,
-    <FaPython className="icon" />,
-    <FaAws className="icon" />,
-    <FaDatabase className="icon" />,
-    <FaNodeJs className="icon" />,
+  ];
+
+  const skills = [
+    "React.js",
+    "HTML5",
+    "CSS3",
+    "JavaScript",
+    "Python",
+    "Tensorflow",
+    "AWS",
+    "Docker",
+    "SQL",
+    "Figma",
+    "PowerBI",
+    "Tableau",
   ];
 
   // Generate positions for icons ensuring they don't overlap too much
@@ -58,19 +65,40 @@ export default function Background() {
         {icons.map((Icon, index) => (
           <div
             key={index}
-            className={`absolute text-${
-              index % 2 === 0 ? "[#9333ea]" : "black"
-            }/30 animate-bounce`}
+            className={`absolute text-$
+              {index % 2 === 0 ? "[#9333ea]" : "black"}/30 animate-bounce`}
             style={{
               ...randomPositions[index],
               fontSize: "2.5rem",
-              opacity: 0.2,  // Lower brightness by reducing opacity
+              opacity: 0.2, // Lower brightness by reducing opacity
               animationDelay: `${Math.random() * 5}s`, // Random animation start time
             }}
           >
             {Icon}
           </div>
         ))}
+      </div>
+
+      {/* Skills Text Scroller */}
+      <div className="absolute top-0 w-full text-center py-4 bg-gray-900/50 overflow-hidden">
+        <div className="w-full whitespace-nowrap animate-scroll">
+          {skills.map((skill, index) => (
+            <span
+              key={index}
+              className="mx-8 text-lg font-semibold inline-block text-white/50"
+            >
+              {skill}
+            </span>
+          ))}
+          {skills.map((skill, index) => (
+            <span
+              key={index + skills.length}
+              className="mx-8 text-lg font-semibold inline-block text-white/50"
+            >
+              {skill}
+            </span>
+          ))}
+        </div>
       </div>
 
       {/* Animation styles */}
@@ -100,6 +128,20 @@ export default function Background() {
         .icon:hover {
           transform: scale(1.5);
           transition: transform 0.3s ease-in-out;
+        }
+
+        .animate-scroll {
+          display: inline-block;
+          animation: scroll 20s linear infinite;
+        }
+
+        @keyframes scroll {
+          from {
+            transform: translateX(0);
+          }
+          to {
+            transform: translateX(-100%);
+          }
         }
       `}</style>
     </div>

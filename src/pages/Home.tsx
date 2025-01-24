@@ -1,20 +1,35 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import MobileHome from "./MobileHome";
 
 export default function Home() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768); // Adjust the breakpoint as needed
+    };
+
+    handleResize(); // Check on initial load
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  if (isMobile) {
+    return <MobileHome />;
+  }
+
   return (
     <div className="relative min-h-screen">
       {/* Add the embedded Spline design as a foreground */}
-      <div className="absolute inset-0 z-20">
+      <div className="absolute inset-0 z-20 model-container">
         <iframe
           src="https://my.spline.design/miniroomremakecopyprogrammerroom-e96a6679b35c89c566a74cbefc188ad7/"
           frameBorder="0"
-          width="100%"
-          height="100%"
-          className="w-full h-full"
+          className="model-iframe"
         ></iframe>
       </div>
       {/* Foreground content with blur effect */}
-      <div className="relative z-10 flex flex-col items-start justify-center h-screen text-center text-white px-40">
+      <div className="relative z-10 flex flex-col items-start justify-center h-screen text-center text-white px-40 content-container">
         <div className="bg-violet/10 backdrop-blur-md p-8 rounded-lg">
           <h1 className="text-6xl font-bold mb-6 text-shadow">Saurabh Kale</h1>
           <p className="text-xl text-gray-200 mb-8 text-shadow">
@@ -41,6 +56,21 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <style>{`
+        .model-container {
+          width: 100%;
+          height: 100%;
+        }
+        .model-iframe {
+          width: 100%;
+          height: 100%;
+        }
+        @media (max-width: 1024px) {
+          .model-container {
+            display: none; /* Hide the model for tablets and smaller devices */
+          }
+        }
+      `}</style>
     </div>
   );
 }
