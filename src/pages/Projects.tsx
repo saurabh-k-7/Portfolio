@@ -6,6 +6,7 @@ import image4 from "../public/PowerBI.png";
 const projects = [
   {
     title: "BankHub",
+    href: "https://github.com/saurabh-k-7/BankHub",
     description:
       "Development and deployment of a modern banking system clone hosted on AWS-EC2 ",
     image: image1,
@@ -21,6 +22,7 @@ const projects = [
   },
   {
     title: "Imaginate",
+    href: "https://github.com/saurabh-k-7/Imaginate-streamlit",
     description:
       "A Framework for Image Generation, Classification and Segmentation",
     image: image2,
@@ -31,6 +33,7 @@ const projects = [
   },
   {
     title: "Crop Yield Prediction using Machine Learning",
+    href: "https://example.com/crop-yield-prediction",
     description:
       "Predicted total yield of crops based on weather conditions, soil quality, and other factors.",
     image: image3,
@@ -43,6 +46,7 @@ const projects = [
   },
   {
     title: "Power BI and Tableau",
+    href: "https://bit.ly/3C6SZJR",
     description:
       "Created Amazing Dashboard using Power BI to visualize sales data.",
     image: image4,
@@ -72,7 +76,14 @@ export default function Projects() {
             />
             <div className="p-6">
               <h3 className="text-xl font-semibold mb-2 text-purple-300">
-                {project.title}
+                <a
+                  href={project.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline"
+                >
+                  {project.title}
+                </a>
               </h3>
               <p className="text-gray-400 mb-4">{project.description}</p>
               <div className="flex flex-wrap gap-2">
