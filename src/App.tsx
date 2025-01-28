@@ -11,6 +11,11 @@ import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 
+interface CircleElement extends HTMLElement {
+  x: number;
+  y: number;
+}
+
 function App() {
   return (
     <Router>
@@ -21,17 +26,35 @@ function App() {
 
 function MainContent() {
   const location = useLocation();
-  const isAnimationPage = ["/projects", "/contact", "/mobilehome"].includes(location.pathname);
+  const isAnimationPage = ["/projects", "/contact", "/mobilehome"].includes(
+    location.pathname
+  );
 
   useEffect(() => {
     if (isAnimationPage) {
       const coords = { x: 0, y: 0 };
-      const circles = document.querySelectorAll(".circle");
+      const circles = document.querySelectorAll<CircleElement>(".circle");
       const colors = [
-        "#e5ccff", "#d8b3ff", "#cc99ff", "#bf80ff", "#b366ff",
-        "#a64dff", "#9933ff", "#8c1aff", "#8000ff", "#7300e6",
-        "#6600cc", "#5900b3", "#4d0099", "#400080", "#330066",
-        "#26004d", "#1a0033", "#0d001a", "#07000f", "#030005"
+        "#e5ccff",
+        "#d8b3ff",
+        "#cc99ff",
+        "#bf80ff",
+        "#b366ff",
+        "#a64dff",
+        "#9933ff",
+        "#8c1aff",
+        "#8000ff",
+        "#7300e6",
+        "#6600cc",
+        "#5900b3",
+        "#4d0099",
+        "#400080",
+        "#330066",
+        "#26004d",
+        "#1a0033",
+        "#0d001a",
+        "#07000f",
+        "#030005",
       ];
 
       circles.forEach((circle, index) => {
@@ -54,7 +77,9 @@ function MainContent() {
         circles.forEach((circle, index) => {
           circle.style.left = x - 12 + "px";
           circle.style.top = y - 12 + "px";
-          circle.style.transform = `scale(${(circles.length - index) / circles.length})`;
+          circle.style.transform = `scale(${
+            (circles.length - index) / circles.length
+          })`;
 
           circle.x = x;
           circle.y = y;
