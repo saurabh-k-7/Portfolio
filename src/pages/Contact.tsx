@@ -6,7 +6,7 @@ export default function Contact() {
       <div className="relative max-w-md w-full bg-gray-800/50 rounded-xl p-8 border border-gray-700/50 backdrop-blur-sm flex flex-col items-center card">
         <div className="relative w-56 h-56 rounded-full overflow-hidden mb-4">
           <img
-            src="./dp.jpg"
+            src="./dp2.png"
             alt="Profile"
             className="w-full h-full object-cover"
           />
