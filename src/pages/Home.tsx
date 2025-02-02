@@ -1,17 +1,28 @@
 import React, { useEffect, useState } from "react";
 import MobileHome from "./MobileHome";
+import "ldrs/helix";
 
 export default function Home() {
   const [isMobile, setIsMobile] = useState(false);
+  const [isModelLoaded, setIsModelLoaded] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768); // Adjust the breakpoint as needed
+      setIsMobile(window.innerWidth <= 768);
     };
 
-    handleResize(); // Check on initial load
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    // Minimum 2 seconds of loading animation
+    const timeout = setTimeout(() => {
+      setIsLoading(false);
+    }, 4000);
+    return () => clearTimeout(timeout);
   }, []);
 
   if (isMobile) {
@@ -20,15 +31,28 @@ export default function Home() {
 
   return (
     <div className="relative min-h-screen">
-      {/* Add the embedded Spline design as a foreground */}
-      <div className="absolute inset-0 z-20 model-container">
+      {/* Background Loading Screen */}
+      {isLoading && (
+        <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-gray-900 via-purple-900/20 to-gray-900 z-50 transition-opacity duration-1000">
+          <l-helix size="150" speed="2.5" color="white"></l-helix>
+        </div>
+      )}
+
+      {/* 3D Model - Keep it hidden until loaded */}
+      <div
+        className={`absolute inset-0 z-20 model-container transition-opacity duration-1000 ${
+          isModelLoaded ? "opacity-100" : "opacity-0"
+        }`}
+      >
         <iframe
           src="https://my.spline.design/miniroomremakecopyprogrammerroom-e96a6679b35c89c566a74cbefc188ad7/"
           frameBorder="0"
           className="model-iframe"
+          onLoad={() => setIsModelLoaded(true)} // Hide loading once model is loaded
         ></iframe>
       </div>
-      {/* Foreground content with blur effect */}
+
+      {/* Main Content */}
       <div className="relative z-10 flex flex-col items-start justify-center h-screen text-center text-white px-40 content-container">
         <div className="bg-violet/10 backdrop-blur-md p-8 rounded-lg">
           <h1 className="text-6xl font-bold mb-6 text-shadow">Saurabh Kale</h1>
@@ -56,6 +80,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+
       <style>{`
         .model-container {
           width: 100%;
@@ -67,7 +92,7 @@ export default function Home() {
         }
         @media (max-width: 1024px) {
           .model-container {
-            display: none; /* Hide the model for tablets and smaller devices */
+            display: none;
           }
         }
       `}</style>
